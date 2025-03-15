@@ -10,6 +10,7 @@ function NavBar() {
   return (
     <div className="flex item-center justify-between text-sm py-4 mb-5 border-b border-b-gray-400">
       <img
+         onClick={() => navigate('/')}
         className=" w-44   cursor-pointer"
         src={assets.vainaha}
         alt="Vainaha"
@@ -49,7 +50,7 @@ function NavBar() {
         ) : (
           <button
             onClick={() => navigate("/login")}
-            className="bg-primary text-white px-8 py-3 rounded-full font-light hidden md:block"
+            className="bg-[#009698]  text-white px-8 py-3 rounded-full font-light hidden md:block"
           >
             Create Account
           </button>
