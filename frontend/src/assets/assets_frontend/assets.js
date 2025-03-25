@@ -4,7 +4,7 @@ import group_profiles from './group_profiles.png'
 import profile_pic from './profile_pic.png'
 import contact_image from './contact_image.png'
 import about_image from './about_image.png'
-import logo from './logo.svg'
+
 import dropdown_icon from './dropdown_icon.svg'
 import menu_icon from './menu_icon.svg'
 import cross_icon from './cross_icon.png'
@@ -37,13 +37,14 @@ import General_physician from './General_physician.svg'
 import Gynecologist from './Gynecologist.svg'
 import Neurologist from './Neurologist.svg'
 import Pediatricians from './Pediatricians.svg'
+import team_image from './team_image.png'
 
 
 export const assets = {
     appointment_img,
     header_img,
+    team_image,
     group_profiles,
-    logo,
     vainaha,
     chats_icon,
     verified_icon,
