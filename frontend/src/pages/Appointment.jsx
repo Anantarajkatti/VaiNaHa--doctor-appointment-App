@@ -2,6 +2,8 @@ import React, { useContext, useEffect, useState } from "react";
 import { AppContext } from "../context/AppContext";
 import { useNavigate, useParams } from "react-router-dom";
 import { assets } from "../assets/assets_frontend/assets";
+import RelatedDoctors from "../components/RelatedDoctors";
+
 
 function Appointment() {
   const { docId } = useParams();
@@ -201,8 +203,10 @@ function Appointment() {
             ))}
         </div>
 
-        {/* <button onClick={bookAppointment} className='bg-primary text-white text-sm font-light px-20 py-3 rounded-full my-6'>Book an appointment</button> */}
+        <button  className='bg-primary text-white text-sm font-light px-20 py-3 rounded-full my-6'>Book an appointment</button>
       </div>
+
+      <RelatedDoctors speciality={docInfo.speciality} docId={docId}/>
     </div>
   );
 }
