@@ -37,7 +37,7 @@ function NavBar() {
         {token ? (
           <div className="flex items-center gap-2 cursor-pointer group relative">
             <img
-              className="w-8 h-8 object-cover object-top rounded-full border border-black "
+              className="w-10 h-10 object-cover object-top rounded-full border border-black "
               src={assets.profile_Ind}
               alt="profile_pic"
             />

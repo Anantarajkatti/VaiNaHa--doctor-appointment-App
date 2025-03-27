@@ -157,13 +157,6 @@ function Appointment() {
               {docInfo.fees}
             </span>{" "}
           </p>
-          <p> Tell me what you Feel</p>
-          <textarea
-            className="border border-gray"
-            rows="4"
-            cols="50"
-            placeholder="Enter your text here..."
-          ></textarea>
         </div>
       </div>
 
@@ -173,7 +166,9 @@ function Appointment() {
         <div className="flex gap-3 items-center w-full overflow-x-scroll mt-4">
           {docSlots.length &&
             docSlots.map((item, index) => {
-              console.log(item[0]);
+              {
+                /* console.log(item[0]); */
+              }
               console.log(item[0] && daysOfWeek[item[0].datetime.getDay()]);
               return (
                 <div
@@ -185,6 +180,7 @@ function Appointment() {
                       : "border border-[#DDDDDD]"
                   }`}
                 >
+                  {/* &&: A logical AND (&&) operator is used here for conditional rendering. If item[0] exists (i.e., it's not null, undefined, or false), then the right-hand expression will be evaluated and printed. */}
                   <p>{item[0] && daysOfWeek[item[0].datetime.getDay()]}</p>
                   <p>{item[0] && item[0].datetime.getDate()}</p>
                 </div>
@@ -208,8 +204,28 @@ function Appointment() {
               </p>
             ))}
         </div>
+        {slotTime ? (
+          <div className="m-5">
+            <p> Tell me what you Feel</p>
+            <textarea
+              className="border border-gray w-full text-gray"
+              rows="4"
+              cols="50"
+              placeholder="Enter your text here..."
+            ></textarea>
+          </div>
+        ) : null}
 
-        <button className="bg-primary text-white text-sm font-light px-20 py-3 rounded-full my-6">
+        <button
+          onClick={() => {
+            console.log(
+              slotTime,
+              daysOfWeek[docSlots[slotIndex].datetime.getDay()],
+              docInfo.name
+            );
+          }}
+          className="bg-primary text-white text-sm font-light px-20 py-3 rounded-full my-6"
+        >
           Book an appointment
         </button>
       </div>
