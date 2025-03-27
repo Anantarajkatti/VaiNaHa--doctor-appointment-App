@@ -138,7 +138,10 @@ function MyProfile() {
         </div>
         <div className="mt-10">
           {isEdit ? (
-            <button className="border border-primary px-8 py-2 rounded-full hover:bg-primary hover:text-white transition-all">
+            <button
+              onClick={() => setIsEdit(false)}
+              className="border border-primary px-8 py-2 rounded-full hover:bg-primary hover:text-white transition-all"
+            >
               Save information
             </button>
           ) : (

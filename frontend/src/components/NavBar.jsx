@@ -3,7 +3,7 @@ import { assets } from "../assets/assets_frontend/assets";
 import { NavLink, useNavigate } from "react-router-dom";
 
 function NavBar() {
-  const [showDropDown, setShowDropDown] = useState(false);
+  // const [showDropDown, setShowDropDown] = useState(false);
   const [token, SetToken] = useState(true);
 
   const navigate = useNavigate();
@@ -52,7 +52,7 @@ function NavBar() {
                   My Profile
                 </p>
                 <p
-                  onClick={() => navigate("/my-appointments")}
+                  onClick={() => navigate("/my-appointment")}
                   className=" hover:text-black cursor-pointer"
                 >
                   {" "}
