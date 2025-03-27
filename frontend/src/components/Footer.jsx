@@ -29,8 +29,8 @@ function Footer() {
         <div>
           <p className="text-xl font-medium mb-5">GET IN TOUCH</p>
           <ul className="flex flex-col gap-2 text-gray-600">
-            <li>+91-9196843923</li>
-            <li>contact@vainaha.com</li>
+            <li>📞 (+91) 98765 43210</li>
+            <li>✉️ support@vainyahealth.com</li>
           </ul>
         </div>
       </div>

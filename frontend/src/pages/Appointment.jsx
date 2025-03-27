@@ -4,7 +4,6 @@ import { useNavigate, useParams } from "react-router-dom";
 import { assets } from "../assets/assets_frontend/assets";
 import RelatedDoctors from "../components/RelatedDoctors";
 
-
 function Appointment() {
   const { docId } = useParams();
   const { doctors, currencySymbol } = useContext(AppContext);
@@ -45,9 +44,16 @@ function Appointment() {
       if (today.getDate() === currentDate.getDate()) {
         // console.log("same date")
         currentDate.setHours(
-          currentDate.getHours() > 10 ? currentDate.getHours() + 1 : 10
+          currentDate.getHours() > 10
+            ? currentDate.getMinutes() > 30
+              ? currentDate.getHours() + 1
+              : currentDate.getHours()
+            : 10
         );
-        currentDate.setMinutes(currentDate.getMinutes() > 30 ? 30 : 0);
+
+        currentDate.setMinutes(
+          currentDate.getMinutes() > 0 && currentDate.getMinutes() < 30 ? 30 : 0
+        );
       } else {
         currentDate.setHours(10);
         currentDate.setMinutes(0);
@@ -153,7 +159,7 @@ function Appointment() {
           </p>
           <p> Tell me what you Feel</p>
           <textarea
-          className="border border-gray"
+            className="border border-gray"
             rows="4"
             cols="50"
             placeholder="Enter your text here..."
@@ -186,7 +192,7 @@ function Appointment() {
             })}
         </div>
 
-        <div className="flex items-center gap-3 w-full overflow-x-scroll mt-4">
+        <div className=" flex flex-wrap items-center gap-3 w-full  mt-4 ">
           {docSlots.length &&
             docSlots[slotIndex].map((item, index) => (
               <p
@@ -203,10 +209,12 @@ function Appointment() {
             ))}
         </div>
 
-        <button  className='bg-primary text-white text-sm font-light px-20 py-3 rounded-full my-6'>Book an appointment</button>
+        <button className="bg-primary text-white text-sm font-light px-20 py-3 rounded-full my-6">
+          Book an appointment
+        </button>
       </div>
 
-      <RelatedDoctors speciality={docInfo.speciality} docId={docId}/>
+      <RelatedDoctors speciality={docInfo.speciality} docId={docId} />
     </div>
   );
 }
