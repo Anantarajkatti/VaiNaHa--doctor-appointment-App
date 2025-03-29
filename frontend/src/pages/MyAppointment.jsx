@@ -27,12 +27,22 @@ function MyAppointment() {
             </p>
           </div>
           <div className="flex flex-col gap-2 justify-end">
-            <button className="text-sm text-stone-500 text-center sm:min-w-48">
-              Pay Online
-            </button>
-            <button className="text-sm text-stone-500 text-center sm:min-w-48">
-              Cancel
-            </button>
+            <div className="flex flex-col justify-center">
+              <p className="text-sm text-zinc-600 text-center">
+                Date :<span>25 Jan 2025</span>
+              </p>
+              <p className="text-sm text-zinc-600 text-center">
+                Time :<span> 8:30</span>
+              </p>
+            </div>
+            <div className="flex flex-col gap-3">
+              <button className="text-sm b-5 rounded-full text-stone-500 text-center sm:min-w-48 border border-black hover:bg-blue-700 hover:text-red-50">
+                Pay Online
+              </button>
+              <button className="text-sm b-5 rounded-full text-stone-500 text-center sm:min-w-48 border border-black hover:bg-red-700 hover:text-red-50">
+                Cancel
+              </button>
+            </div>
           </div>
         </div>
       ))}
